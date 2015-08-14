@@ -1,0 +1,22 @@
+{
+  "name": "spot",
+  "version": "0.1.0",
+  "description": "spotify, in the worst way",
+  "main": "index.js",
+  "bin": {
+    "spot": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mark Battersby",
+  "license": "ISC",
+  "dependencies": {
+    "blessed": "^0.1.7",
+    "dotenv": "^1.2.0",
+    "lodash": "^3.10.0",
+    "moment": "^2.10.3",
+    "request": "^2.58.0",
+    "temp": "^0.8.3"
+  }
+}
