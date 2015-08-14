@@ -44,7 +44,7 @@ getToken = ->
 
 getPlaylists = (token) ->
   options =
-    url: 'https://api.spotify.com/v1/users/notmarkus/playlists?limit=50'
+    url: "https://api.spotify.com/v1/users/#{process.env.USERNAME}/playlists?limit=50"
     headers:
       'Authorization': "Bearer #{token}"
 
