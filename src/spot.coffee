@@ -177,13 +177,14 @@ searchInput = blessed.prompt
   tags: true
 
 setContentRows = (rows) ->
+  maxLength = screen.width / 5
   content.collection = rows
   rows = _.map content.collection, (c) ->
     [
-      c.name
-      _.map(c.artists, 'name').join(', ')
-      c.album.name
-      moment(c.duration_ms).format('m:ss')
+      c.name.substr(0, maxWidth)
+      _.map(c.artists, 'name').join(', ').substr(0, maxWidth)
+      c.album.name.substr(0, maxWidth)
+      moment(c.duration_ms).format('m:ss').substr(0, maxWidth)
     ]
   content.setRows [CONTENT_HEADER].concat(rows)
 
