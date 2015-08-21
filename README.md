@@ -14,3 +14,5 @@ $ npm install
 $ npm link
 $ spot
 ```
+
+![see spot. see spot play music. play spot, play.](screenshot.png)
