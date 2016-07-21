@@ -176,21 +176,25 @@ searchInput = blessed.prompt
   width: '75%'
   tags: true
 
+setContentRows = (rows) ->
+  maxLength = screen.width / 5
+  content.collection = rows
+  rows = _.map content.collection, (c) ->
+    [
+      c.name.substr(0, maxWidth)
+      _.map(c.artists, 'name').join(', ').substr(0, maxWidth)
+      c.album.name.substr(0, maxWidth)
+      moment(c.duration_ms).format('m:ss').substr(0, maxWidth)
+    ]
+  content.setRows [CONTENT_HEADER].concat(rows)
+
 performSearch = (err, query) ->
   searchModal.hide()
   screen.render()
   return unless query?.length
 
   request SEARCH_URL + query.split(' ').join('+'), (err, res, body) ->
-    content.collection = JSON.parse(body).tracks.items
-    rows = _.map content.collection, (c) ->
-      [
-        c.name
-        _.map(c.artists, 'name').join(', ')
-        c.album.name
-        moment(c.duration_ms).format('m:ss')
-      ]
-    content.setRows [CONTENT_HEADER].concat(rows)
+    setContentRows JSON.parse(body).tracks.items
     screen.render()
 
 getImage = (filename) ->
@@ -235,15 +239,7 @@ playSample = (filename) ->
 playlists.key 'enter', ->
   opts = _.extend REQUEST_OPTS, url: playlists.collection.items[playlists.selected].tracks.href
   request opts, (err, res, body) ->
-    content.collection = _.pluck JSON.parse(body).items, 'track'
-    rows = _.map content.collection, (c) ->
-      [
-        c.name
-        _.map(c.artists, 'name').join(', ')
-        c.album.name
-        moment(c.duration_ms).format('m:ss')
-      ]
-    content.setRows [CONTENT_HEADER].concat(rows)
+    setContentRows _.pluck JSON.parse(body).items, 'track'
     content.focus()
     screen.render()
 
