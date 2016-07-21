@@ -108,12 +108,13 @@ content = blessed.listtable
   style:
     cell:
       fg: 'grey'
-      selected:
-        fg: 'white'
-        bold: true
     header:
       fg: 'grey'
       bold: true
+    focus:
+      selected:
+        fg: 'white'
+        bold: true
   scrollbar:
       ch: ' '
       inverse: true
@@ -142,11 +143,12 @@ playlists = blessed.list
     bottom: 0
     left: 1
   style:
-    selected:
-      fg: 'white'
-      bold: true
     item:
       fg: 'grey'
+    focus:
+      selected:
+        fg: 'white'
+        bold: true
   scrollbar:
       ch: ' '
       inverse: true
