@@ -1,6 +1,6 @@
 {
-  "name": "spot",
-  "version": "0.1.0",
+  "name": "hey-spot",
+  "version": "0.0.0",
   "description": "spotify, in the worst way",
   "main": "index.js",
   "bin": {
