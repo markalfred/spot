@@ -28,3 +28,5 @@ node_modules
 
 # Private environment variables
 .env
+
+.vscode
