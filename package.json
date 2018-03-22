@@ -7,6 +7,7 @@
     "spot": "./index.js"
   },
   "scripts": {
+    "compile": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mark Battersby",
@@ -17,6 +18,7 @@
     "lodash": "^3.10.0",
     "moment": "^2.10.3",
     "request": "^2.58.0",
-    "temp": "^0.8.3"
+    "temp": "^0.8.3",
+    "typescript": "^2.7.2"
   }
 }

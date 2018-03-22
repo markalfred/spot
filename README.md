@@ -18,4 +18,8 @@ $ npm link
 $ spot
 ```
 
+## TypeScript
+Compile TypeScript files:
+```npm run compile```
+
 ![see spot. see spot play music. play spot, play.](screenshot.png)
