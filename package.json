@@ -8,6 +8,7 @@
   },
   "scripts": {
     "compile": "tsc",
+    "ts-watch": "tsc -w",
     "pretty": "prettier --write 'src/**/*.ts'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
